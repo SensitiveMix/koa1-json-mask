@@ -16,17 +16,22 @@ module.exports = opts => {
   const name = opts.name || 'fields'
 
   return function * mask (next) {
-    yield next
-
-    const body = this.body
-
-    // validate json format
-    if (!body || (typeof body !== 'object')) return
-
     // check for query fields, should exist in query
     const fields = this.query[name] || this.fields
-    if (!fields) return
+    if (!fields) {
+      return yield next
+    } else {
+      // just for api projection
+      this.fieldsComile = compile(fields)
+      yield next
 
-    this.body = filter(this.body, compile(fields))
+      const body = this.body
+
+      // validate format
+      if (!body || (typeof body !== 'object') || !this.fieldsComile) return
+
+      // parse body
+      this.body = filter(this.body, this.fieldsComile)
+    }
   }
 }

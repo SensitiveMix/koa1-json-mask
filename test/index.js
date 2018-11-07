@@ -1,11 +1,11 @@
 /* global describe, beforeEach, afterEach, it */
 const request = require('supertest')
-const fields = require('..')
+const mockFields = require('..')
 const Koa = require('koa')
 
 const app = new Koa()
 
-app.use(fields())
+app.use(mockFields())
 
 app.use(function * (next) {
   if (this.path === '/array') return yield next
@@ -45,8 +45,8 @@ describe('fields()', () => {
   afterEach(() => server.close())
 
   describe('when ?fields is missing', () => {
-    it('should be ignored', async () => {
-      await request(server)
+    it('should be ignored', function * () {
+      yield request(server)
           .get('/')
           .expect(200)
     })
@@ -54,16 +54,16 @@ describe('fields()', () => {
 
   describe('when ?fields is present', () => {
     describe('with one property', () => {
-      it('should fields that property', async () => {
-        await request(server)
+      it('should fields that property', function * () {
+        yield request(server)
           .get('/?fields=name,location/name')
           .expect({ name: 'tobi', location: { name: 'London' } })
       })
     })
 
     describe('with an array response', () => {
-      it('should fields each document', async () => {
-        await request(server)
+      it('should fields each document', function * () {
+        yield request(server)
           .get('/array?fields=name,location/name')
           .expect([
             { name: 'tobi', location: { name: 'London' } },
@@ -73,8 +73,8 @@ describe('fields()', () => {
     })
 
     describe('with multiple properties', () => {
-      it('should split on commas', async () => {
-        await request(server)
+      it('should split on commas', function * () {
+        yield request(server)
           .get('/?fields=name,packages')
           .expect({ name: 'tobi', packages: 5 })
       })

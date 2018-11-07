@@ -38,7 +38,15 @@ browser-stdout@1.3.1:
   resolved "https://registry.yarnpkg.com/browser-stdout/-/browser-stdout-1.3.1.tgz#baa559ee14ced73452229bad7326467c61fabd60"
   integrity sha512-qhAVI1+Av2X7qelOfAIYwXONood6XlZE/fXaBSmW/T5SzLAmCgzi+eiWE7fUvbHaeNBQH13UftjpXxsfLkMpgw==
 
-co@^4.0.2, co@^4.4.0:
+co-mocha@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/co-mocha/-/co-mocha-1.2.2.tgz#c4fdf24d37f43ca4da668b14542a96e9377479ab"
+  integrity sha512-ocdJRn3sxonOqpdjSU2VwTwWzjTSoatzsTqCWiC3eGvJFNs8ZNMlZwfgYolQCdfddMz4muiZl99KIV9gKoNvxg==
+  dependencies:
+    co "^4.0.0"
+    is-generator "^1.0.1"
+
+co@^4.0.0, co@^4.0.2, co@^4.4.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
   integrity sha1-bqa989hTrlTMuOR7+gvz+QMfsYQ=
@@ -259,6 +267,11 @@ inherits@2, inherits@2.0.3, inherits@~2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
+
+is-generator@^1.0.1:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/is-generator/-/is-generator-1.0.3.tgz#c14c21057ed36e328db80347966c693f886389f3"
+  integrity sha1-wUwhBX7TbjKNuANHlmxpP4hjifM=
 
 isarray@~1.0.0:
   version "1.0.0"
