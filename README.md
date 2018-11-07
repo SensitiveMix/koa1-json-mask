@@ -1,5 +1,7 @@
 # koa1-json-mask
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/SensitiveMix/koa1-json-mask.svg)](https://greenkeeper.io/)
+
 Middleware allowing the client to mask / filter the response to only what they need,
 reducing the amount of traffic over the wire using the `?fields=foo,bar,baz`
 querystring parameter.
