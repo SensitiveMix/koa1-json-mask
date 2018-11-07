@@ -1,14 +1,14 @@
 {
-  "name": "koa-json-mask",
-  "version": "1.0.0",
+  "name": "koa1-json-mask",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nemtsov/koa-json-mask.git"
+    "url": "https://github.com/SensitiveMix/koa1-json-mask.git"
   },
   "bugs": {
-    "url": "https://github.com/nemtsov/koa-json-mask/issues"
+    "url": "https://github.com/SensitiveMix/koa1-json-mask/issues"
   },
-  "homepage": "https://github.com/nemtsov/koa-json-mask#readme",
+  "homepage": "https://github.com/SensitiveMix/koa1-json-mask#readme",
   "description": "Middleware allowing the client to filter the response to only what they need",
   "directories": {
     "example": "examples",
@@ -37,7 +37,7 @@
     "supertest": "^3.0.0"
   },
   "engines": {
-    "node": ">=7.6.0"
+    "node": ">=6.0.0"
   },
   "files": [
     "index.js"
