@@ -1,4 +1,4 @@
-# koa-json-mask
+# koa1-json-mask
 
 Middleware allowing the client to mask / filter the response to only what they need,
 reducing the amount of traffic over the wire using the `?fields=foo,bar,baz`
