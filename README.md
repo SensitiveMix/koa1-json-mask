@@ -148,4 +148,4 @@ For more examples, take a look at the
 
 # License
 
-MIT
+MIT License
